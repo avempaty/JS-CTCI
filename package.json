@@ -1,0 +1,23 @@
+{
+  "name": "javascript-ctci",
+  "version": "1.0.0",
+  "description": "Javascript practice w/CTCI",
+  "main": "index.js",
+  "scripts": {
+    "ch1": "nodemon ./chapter1.js",
+    "ch2": "nodemon ./chapter2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avempaty/JS-CTCI.git"
+  },
+  "author": "Aneesh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avempaty/JS-CTCI/issues"
+  },
+  "homepage": "https://github.com/avempaty/JS-CTCI#readme",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

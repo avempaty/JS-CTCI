@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "ch1": "nodemon ./chapter1.js",
-    "ch2": "nodemon ./chapter2.js"
+    "ch2": "nodemon ./chapter2.js",
+    "ch4": "nodemon ./chapter4.js"
   },
   "repository": {
     "type": "git",

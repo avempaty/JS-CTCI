@@ -258,3 +258,56 @@ root.left.right.right = new treeNode(17)
 root.left.right.right.parent = root.left.right
 
 console.log(successor(root))*/
+
+/* 4.8 First Common Ancestor
+Find the first common ancestor of two nodes in a binary
+tree. Avoid storing additional nodes in data structures
+*/
+
+//Approach 1: With no parent node, check the root
+//and see if there is a path to both nodes, until we 
+//reach a node that doesn't cover both
+//O(n) time, O(1) space
+var firstCommonAncestor = function(root, n1, n2) {
+
+    var helper = function(root, node) {
+        if(root === null) return false
+        if(root === node) return true
+        return helper(root.left, node) || helper(root.right, node)
+    }
+
+    if(n1 === root || n2 === root) return root
+    if(n1 === n2) return n1
+    if(helper(root, n1) === false || helper(root,n2) === false) return null
+
+    var recurse = function(curr, n1, n2) {
+        if(helper(curr.left, n1) && helper(curr.left, n2)) {
+            return recurse(curr.left, n1, n2)
+        } else if(helper(curr.right,n1) && helper(curr.right, n2)) {
+            return recurse(curr.right, n1, n2)
+        } else {
+            return curr
+        }
+    }
+    return recurse(root, n1, n2)
+}
+
+/*var root = new treeNode(20)
+root.left = new treeNode(10)
+root.right = new treeNode(30)
+root.left.left = new treeNode(5)
+root.left.left.left = new treeNode(3)
+root.left.right = new treeNode(15)
+root.left.right.right = new treeNode(17)
+root.left.left.right = new treeNode(11)
+console.log(firstCommonAncestor(root, root.left.left.left, root.left.right.right))*/
+
+/* 4.10 Check Subtree
+T1 & T2 are two very large binary trees, with T1 much
+bigger than T2. Create an algorithm to determine if T2
+is a subtree of T1.
+*/
+
+
+
+

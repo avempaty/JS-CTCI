@@ -31,9 +31,18 @@ isUnique = function (string) {
     return true
 }
 
-/*console.log(isUnique('aba'))
-console.log(isUnique('abc'))
-console.log(isUnique('dbcd'))*/
+//Approach 3: Convert to Set() and compare length 
+//O(n) time, O(n) space
+isUnique = function (string) {
+    var arr = string.split('')
+    var set = new Set(arr)
+
+    return set.size === arr.length ? true : false
+}
+
+/*console.log(isUnique('aba')) //false
+console.log(isUnique('abc')) //true
+console.log(isUnique('dbcd')) //false*/
 
 //1.2 Check Permutation
 //Given two strings, write a method to decide if one is a
@@ -69,13 +78,12 @@ isPermutation = function (s1, s2) {
     if (s1.length != s2.length) return false
     s1 = s1.split("").sort().toString()
     s2 = s2.split("").sort().toString()
-    if (s1 === s2) return true
-    return false
+    return s1 === s2 ? true : false
 }
 
-/*console.log(isPermutation('aba', 'bac'))
-console.log(isPermutation('aab', 'aaa'))
-console.log(isPermutation('cars', 'racs'))*/
+/*console.log(isPermutation('aba', 'bac')) //false
+console.log(isPermutation('aab', 'aaa')) //false
+console.log(isPermutation('cars', 'racs')) //true*/
 
 /*1.4 Palindrome Permutation
 Given a string, write a function to check if it is a 
@@ -252,4 +260,4 @@ var matrix1 = [
     [5, 6, 7, 8],
     [9, 0, 11, 12],
 ]
-console.log(zeroMatrix(matrix1))
+//console.log(zeroMatrix(matrix1))
